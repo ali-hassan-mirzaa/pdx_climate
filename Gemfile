@@ -147,7 +147,8 @@ group :test do
 
   gem 'fake_stripe', git: 'https://github.com/ithouse/fake_stripe.git', ref: '42b9dd09a1db3fb2b7ec11809ac93647f178a115'
   gem 'poltergeist'
-  gem 'puma'
+  # gem 'puma'
+  gem 'puma', '< 5'
   gem 'webdrivers'
 end
 
@@ -186,13 +187,15 @@ gem 'recaptcha'
 gem 'add_to_calendar'
 
 group :deployment do
-  gem "capistrano", "=3.11"
+  gem "capistrano", "=3.10"
   gem 'capistrano3-delayed-job', '~> 1.0'
   gem 'capistrano-ssh-doctor', '~> 1.0'
   gem 'capistrano-rvm'
   gem 'capistrano-rails',   require: false
   gem 'capistrano-bundler', require: false
   gem 'capistrano3-puma',   require: false
+  gem "capistrano3-puma"
+  # gem 'capistrano-puma',   require: false
   gem 'capistrano-npm'
   # Gems needs to work with capistrano.
   gem 'ed25519', '~> 1.2'
